@@ -3,7 +3,7 @@ import numpy as np
 
 
 def matrix_shape(matrix):
-    "Calculates the shape of a matrix"
+    """Calculates the shape of a matrix"""
     shape = []
     for i in range(999999999999):
         if isinstance(matrix, list):
