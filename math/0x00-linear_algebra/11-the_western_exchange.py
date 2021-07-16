@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Transpose a np.ndarray"""
 import numpy as np
 
