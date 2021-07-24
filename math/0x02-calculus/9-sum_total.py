@@ -4,10 +4,9 @@
 
 def summation_i_squared(n):
     """Calculates a sum"""
-    summation = 0
     if not isinstance(n, int):
         return None
-    for i in range(n):
-        summation += i ** 2
-    summation += n **2 
-    return summation
+    if n == 1:
+        return 1
+    else:
+        return (n ** 2 + summation_i_squared(n - 1))
