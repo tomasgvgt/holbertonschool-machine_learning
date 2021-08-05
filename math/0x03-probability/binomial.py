@@ -21,24 +21,23 @@ class Binomial:
                 raise TypeError("data must be a list")
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            # mean = sum(data) / len(data)
-            # # variance = ∑ (xi - 𝞵)^2) / N
-            # suma = 0
-            # for i in data:
-            #     suma += (i - mean) ** 2
-            # variance = suma / len(data)
-            # # mean = np
-            # # variance = npq
-            # # q = npq / np
-            # # So having the variance and the mean we can calculate q
-            # q = variance / mean
-            # # p + q = 1
-            # # p = 1 - q
+            mean = sum(data) / len(data)
+            # variance = ∑ (xi - 𝞵)^2) / N
+            suma = 0
+            for i in data:
+                suma += (i - mean) ** 2
+            variance = suma / len(data)
+            # mean = np
+            # variance = npq
+            # q = npq / np
+            # So having the variance and the mean we can calculate q
+            q = variance / mean
+            # p + q = 1
             # p = 1 - q
-            # # if mean = np
-            # # then n = mean / p
-            # n = round(mean / p)
-            n = len(data) / 2
+            p = 1 - q
+            # if mean = np
+            # then n = mean / p
+            n = round(mean / p)
             p = (sum(data) / n) / 100
         self.n = round(n)
         self.p = float(p)
