@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
+"""Representas a Poisson distribution"""
 
 
 class Poisson:
     """Represents a poisson distribution"""
+
     def __init__(self, data=None, lambtha=1.):
+        """Initialize Poisson, setting lambtha"""
+
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
@@ -22,6 +26,7 @@ class Poisson:
     @staticmethod
     def factorial(n):
         """Computes the factorial of a number"""
+
         if n > 1:
             return n * Poisson.factorial(n - 1)
         else:
@@ -29,6 +34,7 @@ class Poisson:
 
     def pmf(self, k):
         """Probability Mass Function"""
+
         # P (X = k) = (ℷ ^k * e ^ - ℷ) / k!
         if k < 0:
             return 0
@@ -40,6 +46,7 @@ class Poisson:
 
     def cdf(self, k):
         """Comulative Mass Function"""
+
         # F(x) = ∑ from i=0 to x pmf(i)
         if k < 0:
             return 0
