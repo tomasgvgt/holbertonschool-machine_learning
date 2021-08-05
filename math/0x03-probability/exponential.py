@@ -44,4 +44,3 @@ class Exponential:
         lamb = self.lambtha
         e = 2.7182818285
         return 1 - e ** (-lamb * x)
-
