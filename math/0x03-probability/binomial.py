@@ -44,12 +44,14 @@ class Binomial:
 
     @staticmethod
     def factorial(n):
+        """Computes de factorial of a number"""
         if n > 1:
             return n * Binomial.factorial(n - 1)
         else:
             return 1
 
     def pmf(self, k):
+        """Computes the PMF given a number of successes"""
         if not isinstance(k, int):
             k = int(k)
         if k < 0:
@@ -58,3 +60,4 @@ class Binomial:
         return (Binomial.factorial(self.n) / (
             Binomial.factorial(k) * Binomial.factorial(self.n - k))) * (
             (self.p ** k) * ((1 - self.p) ** (self.n - k)))
+
