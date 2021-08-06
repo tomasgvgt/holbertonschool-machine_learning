@@ -39,5 +39,6 @@ class Binomial:
             # then n = mean / p
             n = round(mean / p)
             p = (sum(data) / n) / 100
-        self.n = round(n)
+        self.n = int(round(n))
         self.p = float(p)
+
