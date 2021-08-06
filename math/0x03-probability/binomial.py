@@ -41,3 +41,20 @@ class Binomial:
             p = mean / n
         self.n = int(round(n))
         self.p = float(p)
+
+    @staticmethod
+    def factorial(n):
+        if n > 1:
+            return n * Binomial.factorial(n - 1)
+        else:
+            return 1
+
+    def pmf(self, k):
+        if not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+        # f (k; n; p) = (n! / (k! * (n - x)!)) * (p ** k * (1 - p) ** (n - k))
+        return (Binomial.factorial(self.n) / (
+            Binomial.factorial(k) * Binomial.factorial(self.n - k))) * (
+            (self.p ** k) * ((1 - self.p) ** (self.n - k)))
