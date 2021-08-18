@@ -22,7 +22,7 @@ class DeepNeuralNetwork:
         for i in range(self.L):
             W_key = "W" + str(i + 1)
             b_key = "b" + str(i + 1)
-            if not isinstance(layers[i], int):
+            if not isinstance(layers[i], int) or layers[i] < 1:
                 raise TypeError("layers must be a list of positive integers")
 
             if i == 0:
