@@ -70,6 +70,7 @@ class NeuralNetwork:
         return Y_hat, cost
 
     def gradient_descent(self, X, Y, A1, A2, alpha=0.05):
+        """Calculates one pass of gradient descent on the neural network"""
         m = len(Y[0])
         dZ2 = A2 - Y
         dW2 = np.matmul(dZ2, A1.T) / m
