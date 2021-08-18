@@ -29,11 +29,11 @@ class NeuralNetwork:
     @property
     def b1(self):
         return self.__b1
-    
+
     @property
     def A1(self):
         return self.__A1
-    
+
     @property
     def W2(self):
         return self.__W2

@@ -37,8 +37,9 @@ class Neuron:
 
     def cost(self, Y, A):
         """Calculates the cost of the model using logistic regression"""
-        m = len(self.__A[0])
-        cost = -1/m * np.sum(np.multiply(np.log(A), Y) + np.multiply(np.log(1.0000001-A), (1-Y)))
+        m = Y.shape[1]
+        cost = -1/m * np.sum(np.multiply(np.log(A), Y) + np.multiply(
+            np.log(1.0000001 - A), (1 - Y)))
         return cost
 
     def evaluate(self, X, Y):
@@ -58,7 +59,7 @@ class Neuron:
         self.__b = self.__b - alpha * db
 
     def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True,
-        graph=True, step=100):
+              graph=True, step=100):
         """Trains the neuron"""
         if not isinstance(iterations, int):
             raise TypeError("iterations must be an integer")
@@ -68,7 +69,7 @@ class Neuron:
             raise TypeError("alpha must be a float")
         if alpha <= 0:
             raise ValueError("alpha must be positive")
-        if verbose is True or graph == True:
+        if verbose is True or graph is True:
             if not isinstance(step, int):
                 raise TypeError("step must be an integer")
             if step <= 0 or step > iterations:
