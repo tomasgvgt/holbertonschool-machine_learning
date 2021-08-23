@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""calculate the softmax cross-entropy loss of a prediction"""
 import tensorflow as tf
 
 

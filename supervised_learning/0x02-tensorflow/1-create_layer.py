@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Create a leayer of the neural network"""
 import tensorflow as tf
 
 

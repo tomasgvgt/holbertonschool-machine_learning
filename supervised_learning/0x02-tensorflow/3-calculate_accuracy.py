@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import tensorflow as tf
+"""Calcualte the accuracy of a prediction"""
 
 
 def calculate_accuracy(y, y_pred):

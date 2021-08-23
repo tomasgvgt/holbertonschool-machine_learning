@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import tensorflow as tf
+"""Create the forward propagation graph for the neural network"""
 
 
 def forward_prop(x, layer_sizes=[], activations=[]):
