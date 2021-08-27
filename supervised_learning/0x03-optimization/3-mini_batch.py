@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """trains a loaded neural network model using mini-batch gradient descent"""
-import numpy as np
 import tensorflow as tf
 shuffle_data = __import__('2-shuffle_data').shuffle_data
 
 
 def batch(T, n):
+    """Create batches"""
     batches = []
     lenght = len(T)
     for ndx in range(0, lenght, n):
@@ -16,6 +16,7 @@ def batch(T, n):
 def train_mini_batch(X_train, Y_train, X_valid, Y_valid, batch_size=32,
                      epochs=5, load_path="/tmp/model.ckpt",
                      save_path="/tmp/model.ckpt"):
+    """Train loeaded neural network model usig mini-bathc gradient descent"""
     with tf.Session() as session:
         saver = tf.train.import_meta_graph(load_path + '.meta')
         saver.restore(session, load_path)
