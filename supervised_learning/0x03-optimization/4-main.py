@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("TKAgg")
+from matplotlib import pyplot as plt
 import numpy as np
 moving_average = __import__('4-moving_average').moving_average
 
