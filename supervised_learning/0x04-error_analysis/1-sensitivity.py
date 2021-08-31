@@ -11,8 +11,8 @@ def sensitivity(confusion):
     """
     sensitivity = np.zeros(len(confusion),)
     for i in range(len(confusion)):
-        # Sensitivity  = TruePositive/ActualYes
-        actual_yes = np.sum(confusion[i])
+        # Sensitivity  = TruePositive/ActualClass
+        actual_class = np.sum(confusion[i])
         true_positive = confusion[i][i]
-        sensitivity[i] = true_positive / actual_yes
+        sensitivity[i] = true_positive / actual_class
     return sensitivity
