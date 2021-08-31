@@ -1,4 +1,4 @@
-#!/usr/bin/env ptython3
+#!/usr/bin/env python3
 """
 Calculate the sensitivity for each class in a confusion matrix
 """
