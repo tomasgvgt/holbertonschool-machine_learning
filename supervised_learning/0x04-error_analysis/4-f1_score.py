@@ -1,4 +1,4 @@
-#!/usr/bin/env ptython3
+#!/usr/bin/env python3
 """
 calculates the F1 score of a confusion matrix
 """
