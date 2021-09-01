@@ -15,10 +15,9 @@ def specificity(confusion):
     specificity = np.zeros(len(confusion),)
     all_predicted = np.sum(confusion, axis=0)
     all_real = np.sum(confusion, axis=1)
+    true_positive = np.diag(confusion)
     total_array = np.sum(confusion)
-    total = np.sum(total_array)
-    for i in range(len(confusion)):
-        false_positive = all_predicted[i] - confusion[i][i]
-        true_negative = total - all_real[i] - confusion[i][i]
-        specificity[i] = true_negative / (true_negative + false_positive)
-    return specificity
+    false_positive = all_predicted - true_positive
+    actual_negative = total_array - all_real
+    true_negative = actual_negative - false_positive
+    return true_negative / actual_negative
