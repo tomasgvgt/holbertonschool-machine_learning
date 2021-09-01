@@ -14,4 +14,3 @@ def f1_score(confusion):
     sens = sensitivity(confusion)
     prec = precision(confusion)
     return 2 * (sens * prec) / (sens + prec)
-
