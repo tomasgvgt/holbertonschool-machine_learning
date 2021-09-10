@@ -11,7 +11,7 @@ def l2_reg_cost(cost, lambtha, wheights, L, m):
     """
     wheights_sum = 0
     for i in range(1, L + 1):
-        k = "W" + str(i)
-        wheights_sum += np.linalg.norm(wheights[k])
+        W_key = "W" + str(i)
+        wheights_sum += np.linalg.norm(wheights[W_key])
     l2_cost = cost + lambtha * wheights_sum / (2 * m)
     return l2_cost
