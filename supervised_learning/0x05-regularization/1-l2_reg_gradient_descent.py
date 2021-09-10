@@ -28,4 +28,4 @@ def l2_reg_gradient_descent(Y, wheights, cache, alpha, lambtha, L):
         db = (np.sum(dZ, axis=1, keepdims=True)) / m
         dA = np.matmul(wheights[W_key].T, dZ)
         wheights[W_key] = wheights[W_key] - alpha * dW
-        wheights[W_key] = wheights[b_key] - alpha * db
+        wheights[b_key] = wheights[b_key] - alpha * db
