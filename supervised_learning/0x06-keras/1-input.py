@@ -30,5 +30,5 @@ def build_model(nx, layers, activations, lambtha, keep_prob):
         outputs = K.layers.Dense(layers[i], input_shape=(nx,),
                                  activation=activations[i],
                                  kernel_regularizer=regularizer)(dropout)
-        model = K.models.Model(inputs=inputs, outputs=outputs)
+    model = K.models.Model(inputs=inputs, outputs=outputs)
     return model
