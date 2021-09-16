@@ -3,12 +3,12 @@
 Based on 4-train.py, update the function train_model
 to also analyze validation data
 """
+import tensorflow.keras as K
 
 
 def train_model(network, data, labels, batch_size,
                 validation_data=None, epochs,
-                verbose=True, shuffle=False,
-                ):
+                verbose=True, shuffle=False):
     """
     Trains a model using mini batch gradient descent
 
