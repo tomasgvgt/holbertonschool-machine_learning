@@ -44,7 +44,7 @@ def train_model(network, data, labels, batch_size, epochs,
                                                    patience=patience)
         callbacks.append(early_stopping)
 
-    if save_best:
+    if filepath:
         checkpoint = K.callbacks.ModelCheckpoint(filepath,
                                                  save_best_only=save_best,
                                                  monitor='val_loss',
