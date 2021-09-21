@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Perform forward propagation over a 
+Perform forward propagation over a
 convolutional layer of a NN
 """
 import numpy as np
@@ -28,11 +28,11 @@ def conv_forward(A_prev, W, b, activation,
 
         b is a numpy.ndarray of shape (1, 1, 1, c_new)
         containing the biases applied to the convolution
-        
+
         activation: activation function applied to the convolution.
-        padding: string that is either same or valid, 
+        padding: string that is either same or valid,
             indicating the type of padding used.
-            
+
         stride: tuple of (sh, sw) containing the strides
         for the convolution
             sh: stride for the height
