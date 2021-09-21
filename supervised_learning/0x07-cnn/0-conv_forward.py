@@ -52,8 +52,8 @@ def conv_forward(A_prev, W, b, activation,
         ph = 0
         pw = 0
 
-    h_out = (h_prev - kh + 2 * ph) // (sh + 1)
-    w_out = (w_prev - kw + 2 * pw) // (sw + 1)
+    h_out = (h_prev - kh + 2 * ph) // sh + 1
+    w_out = (w_prev - kw + 2 * pw) // sw + 1
 
     image = np.pad(
                    A_prev,
