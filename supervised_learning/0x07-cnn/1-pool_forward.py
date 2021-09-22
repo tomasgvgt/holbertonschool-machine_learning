@@ -43,8 +43,8 @@ def pool_forward(A_prev, kernel_shape, stride=(1, 1), mode='max'):
         for w in range(w_out):
             x1 = h * sw
             x2 = h * sw + kw
-            y1 = w * sh
-            y2 = w * sh + kh
+            y1 = w * sw
+            y2 = w * sw + kw
             if mode == 'max':
                 output[:, w, h, :] = \
                     np.max(A_prev[:, y1:y2, x1:x2], axis=(1, 2))
