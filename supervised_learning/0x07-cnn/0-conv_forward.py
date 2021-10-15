@@ -65,16 +65,16 @@ def conv_forward(A_prev, W, b, activation,
                    constant_values=0)
     output = np.zeros((m, h_out, w_out, c_new))
 
-    for y in range(h_out):
-        for x in range(w_out):
+    for h in range(h_out):
+        for w in range(w_out):
             for cn in range(c_new):
-                output[:, y, x, cn] = \
+                output[:, h, w, cn] = \
                     (W[:, :, :, cn] *
                      image[:,
-                     y * sh: y * sh + kh,
-                     x * sw: x * sw + kw,
+                     h * sh: h * sh + kh,
+                     w * sw: w * sw + kw,
                      :]).sum(axis=(1, 2, 3))
-                output[:, y, x, cn] = \
-                    (activation(output[:, y, x, cn] +
+                output[:, h, w, cn] = \
+                    (activation(output[:, h, w, cn] +
                                 b[0, 0, 0, cn]))
     return output

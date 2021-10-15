@@ -6,7 +6,7 @@ def poly_derivative(poly):
     derivative = []
     if not isinstance(poly, list) or len(poly) == 0:
         return None
-    if any(not isinstance(i, int) for i in poly):
+    if any(not isinstance(i, (int, float)) for i in poly):
         return None
     if len(poly) == 1:
         return [0]

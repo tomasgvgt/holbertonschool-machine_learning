@@ -342,8 +342,7 @@ class Yolo():
 
         key = cv2.waitKey(0)
         if key == ord('s'):
-            os.mkdir('detections') if not os.path.isdir('detections') else None
-            os.chdir('detections')
-            cv2.imwrite(file_name, image)
-            os.chdir('../')
+            if not os.path.exists('./detections'):
+                os.makedirs('./detections')
+            cv2.imwrite('./detections/' + file_name, image)
         cv2.destroyAllWindows()

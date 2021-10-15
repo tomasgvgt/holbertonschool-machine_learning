@@ -12,7 +12,7 @@ def precision(confusion):
     precision = np.zeros(len(confusion),)
     all_predicted_class = confusion.sum(axis=0)
     for i in range(len(confusion)):
-        # precision = TruePositive / PredictedWell
+        # precision = TruePositive / PredictedClass
         true_positive = confusion[i][i]
         predicted_class = all_predicted_class[i]
         precision[i] = true_positive / predicted_class
