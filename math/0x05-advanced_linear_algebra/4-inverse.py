@@ -112,8 +112,8 @@ def inverse(matrix):
 
     Returns: the inverse of matrix, or None if matrix is singular
     """
-    det = determinant(matrix)
     adju = adjugate(matrix)
+    det = determinant(matrix)
     if det is 0:
         return None
     inv = [[i / det for i in row] for row in adju]
