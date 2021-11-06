@@ -13,8 +13,8 @@ def pca(X, ndim):
         d is the number of dimensions in each point
     ndim is the new dimensionality of the transformed X
 
-    Returns: 
-    T, a numpy.ndarray of shape (n, ndim) containing 
+    Returns:
+    T, a numpy.ndarray of shape (n, ndim) containing
         the transformed version of X
     """
     X_m = X - np.mean(X, axis=0)
@@ -23,4 +23,3 @@ def pca(X, ndim):
     T = np.matmul(X_m, W)
 
     return T
-
