@@ -9,13 +9,13 @@ def P_init(X, perplexity):
     """
     Initializes all variables required to calculate the P affinities in t-SNE:
 
-    X is a numpy.ndarray of shape (n, d) 
+    X is a numpy.ndarray of shape (n, d)
     containing the dataset to be transformed by t-SNE
         n is the number of data points
         d is the number of dimensions in each point
     perplexity is the perplexity that all Gaussian distributions should have
     Returns: (D, P, betas, H)
-        D: a numpy.ndarray of shape (n, n) that calculates the squared 
+        D: a numpy.ndarray of shape (n, n) that calculates the squared
         pairwise distance between two data points
             The diagonal of D should be 0s
         P: a numpy.ndarray of shape (n, n) initialized to all 0‘s that will
