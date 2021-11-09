@@ -21,6 +21,6 @@ def HP(Di, beta):
             P affinities of the points
     """
     Pi = np.exp(-Di * beta) / np.sum(np.exp(-Di * beta))
-    Hi = - np.sum(Pi * np.log(Pi))
+    Hi = - np.sum(Pi * np.log2(Pi))
 
     return Hi, Pi
