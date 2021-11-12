@@ -38,7 +38,7 @@ def likelihood(x, n, P):
     """
     if type(n) != int or n < 0:
         raise ValueError('n must be a positive integer')
-    if not type(x) == int or x < 0:
+    if type(x) != int or x < 0:
         e = 'x must be an integer that is greater than or equal to 0'
         raise ValueError(e)
     if x > n:
