@@ -84,7 +84,7 @@ class BayesianOptimization:
         """
         X_aux = []
         for i in range(iterations):
-            X_new, _ = self.acquisition()
+            X_new, EI = self.acquisition()
             if X_new in X_aux:
                 break
             Y_new = self.f(X_new)
@@ -94,4 +94,6 @@ class BayesianOptimization:
             idx = np.argmin(self.gp.Y)
         else:
             idx = np.argmax(self.gp.Y)
-        return self.gp.X[idx], self.gp.Y[idx]
+        X_opt = self.gp.X[idx]
+        Y_opt = self.gp.Y[idx]
+        return X_opt, Y_opt
