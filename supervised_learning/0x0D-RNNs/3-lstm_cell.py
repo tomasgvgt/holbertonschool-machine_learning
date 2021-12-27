@@ -45,8 +45,8 @@ class LSTMCell:
 
     @staticmethod
     def sigmoid(x):
-        """Sigmoid"""
-        return (1 / (1 + np.exp(-x)))
+        """Sigmoid function"""
+        return 1 / (1 + np.exp(-x))
 
     def forward(self, h_prev, c_prev, x_t):
         """
