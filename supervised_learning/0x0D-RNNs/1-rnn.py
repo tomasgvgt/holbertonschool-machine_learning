@@ -31,6 +31,6 @@ def rnn(rnn_cell, X, h_0):
         h, y = rnn_cell.forward(H[s], X[s])
         H[s + 1, :, :] = h
         Y.append(y)
-    Y = np.asarray(y)
+    Y = np.asarray(Y)
 
     return H, Y
