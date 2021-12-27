@@ -32,7 +32,7 @@ class GRUCell:
         self.bz = np.zeros((1, h))
         self.br = np.zeros((1, h))
         self.bh = np.zeros((1, h))
-        self.by = np.zeros((1, h))
+        self.by = np.zeros((1, o))
 
     @staticmethod
     def softmax(x):
