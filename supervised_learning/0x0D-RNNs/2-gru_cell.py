@@ -36,7 +36,7 @@ class GRUCell:
 
     @staticmethod
     def softmax(x):
-        """Computes softmax values for each set of scores in x"""
+        """Softmax function"""
         x_max = np.max(x, axis=1, keepdims=True)
         x_e = np.exp(x - x_max)
         return x_e / np.sum(x_e, axis=1, keepdims=True)
