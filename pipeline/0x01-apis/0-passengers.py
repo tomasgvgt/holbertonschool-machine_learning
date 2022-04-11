@@ -1,10 +1,12 @@
-#/usr/bin/env pythont3
+#!/usr/bin/env pythont3
 import requests
+
 """
 By using the Swapi API,
 create a method that returns the list of ships that can hold
 a given number of passengers
 """
+
 
 def availableShips(passengerCount):
     """
@@ -19,7 +21,7 @@ def availableShips(passengerCount):
             ship_passengers = ship.get('passengers', 0).replace(',', '')
             try:
                 ship_passengers = int(ship_passengers)
-            except:
+            except ValueError:
                 continue
             if ship_passengers >= passengerCount:
                 ships.append(ship['name'])
