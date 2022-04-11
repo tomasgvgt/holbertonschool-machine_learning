@@ -16,10 +16,11 @@ def availableShips(passengerCount):
     ships = []
     while starships['next'] is not None:
         for ship in starships['results']:
+            ship_passengers = ship.get('passengers', 0).replace(',', '')
             try:
-                ship_passengers = int(ship['passengers'])
+                ship_passengers = int(ship_passengers)
             except:
-                pass
+                continue
             if ship_passengers >= passengerCount:
                 ships.append(ship['name'])
         starships = requests.get(starships['next']).json()
