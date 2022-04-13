@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Script to request Github API for users location."""
+"""Script that prints the location of a specific user"""
 import requests
 import time
 from sys import argv
