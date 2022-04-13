@@ -24,4 +24,5 @@ def sentientPlanets():
                 else:
                     continue
     planet_names = list(dict.fromkeys(planet_names))
+    planet_names.sort()
     return planet_names
